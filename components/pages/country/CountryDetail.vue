@@ -70,6 +70,12 @@ import CountryBtn from '~/components/pages/country/CountryBtn.vue'
 export default {
   components: {
     CountryBtn
+  },
+  props: {
+    countryDetails: {
+      type: Object,
+      reqired: true
+    }
   }
 }
 </script>
