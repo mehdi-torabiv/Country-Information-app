@@ -1,19 +1,19 @@
 <template>
-  <div class="bg-dark text-white rounded shadow-md my-3 my-md-auto cursor-pointer">
-    <img src="" height="200" alt="country image">
+  <div class="bg-dark overflow-hidden text-white rounded shadow-md my-3 my-md-auto cursor-pointer">
+    <img :src="country.flag" height="200" width="250px" alt="country image">
     <div class="pl-4 py-4">
       <h4>
-        country name
+        {{ country.name }}
       </h4>
       <p>
         <span class="d-block py-1">
-          population
+          population : {{ country.population }}
         </span>
         <span class="d-block py-1">
-          population
+          Region : {{ country.region }}
         </span>
         <span class="d-block py-1">
-          population
+          Capital : {{ country.capital }}
         </span>
       </p>
     </div>
@@ -22,6 +22,12 @@
 
 <script>
 export default {
+  props: {
+    country: {
+      type: Object,
+      required: true
+    }
+  }
 
 }
 </script>
