@@ -1,13 +1,16 @@
 <template>
   <b-container>
     <b-row class="mt-4">
-      <b-col cols="4">
+      <b-col cols="3">
         <custom-card />
       </b-col>
-      <b-col cols="4">
+      <b-col cols="3">
         <custom-card />
       </b-col>
-      <b-col cols="4">
+      <b-col cols="3">
+        <custom-card />
+      </b-col>
+      <b-col cols="3">
         <custom-card />
       </b-col>
     </b-row>
