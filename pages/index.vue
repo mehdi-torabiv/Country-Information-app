@@ -69,12 +69,14 @@ export default {
       console.log('data', this.countriesList)
     },
     async findCountryByName () {
-      const data = await this.$axios.get(process.env.COUNTRY_URL + `/rest/v2/name/${this.name}`)
+      const { data } = await this.$axios.get(process.env.COUNTRY_URL + `/rest/v2/name/${this.name}`)
       this.countriesList = data
+      console.log('data', this.countriesList)
     },
     async findByRegion () {
-      const data = await this.$axios.get(process.env.COUNTRY_URL + `/rest/v2/regionalbloc/${this.selectedRegion}`)
+      const { data } = await this.$axios.get(process.env.COUNTRY_URL + `/rest/v2/regionalbloc/${this.selectedRegion}`)
       this.countriesList = data
+      console.log('data', this.countriesList)
     }
   }
 }
