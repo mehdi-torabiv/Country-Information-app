@@ -15,6 +15,8 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    indent: 'off'
+    indent: 'off',
+    // eslint-disable-next-line quote-props
+    'quotes': [2, 'single', { 'avoidEscape': true }]
   }
 }
