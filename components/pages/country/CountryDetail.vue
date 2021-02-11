@@ -12,75 +12,77 @@
       <main class="d-flex flex-column flex-md-row justify-content-between">
         <div>
           <p>
-            <span>
+            <span class="font-14 font-weight-bold">
               Native Name:
             </span>
-            <span>
+            <span class="font-14">
               {{ countryDetails.nativeName }}
             </span>
           </p>
           <p>
-            <span>
+            <span class="font-14 font-weight-bold">
               Population:
             </span>
-            <span>
+            <span class="font-14">
               {{ countryDetails.population }}
             </span>
           </p>
           <p>
-            <span>
+            <span class="font-14 font-weight-bold">
               Region:
             </span>
-            <span>
+            <span class="font-14">
               {{ countryDetails.region }}
             </span>
           </p>
           <p>
-            <span>
+            <span class="font-14 font-weight-bold">
               Sub Region:
             </span>
-            <span>
+            <span class="font-14">
               {{ countryDetails.subregion }}
             </span>
           </p>
           <p>
-            <span>
+            <span class="font-14 font-weight-bold">
               Capital:
             </span>
-            <span>
+            <span class="font-14">
               {{ countryDetails.capital }}
             </span>
           </p>
         </div>
         <div>
           <p>
-            <span>
+            <span class="font-14 font-weight-bold">
               Top Level Domain:
             </span>
-            <span>
+            <span class="font-14">
               {{ countryDetails.topLevelDomain[0] }}
             </span>
           </p>
           <p>
-            <span>
+            <span class="font-14 font-weight-bold">
               Currencies:
             </span>
-            <span>
+            <span class="font-14">
               {{ countryDetails.currencies[0].name }}
             </span>
           </p>
           <p>
-            <span>
+            <span class="font-14 font-weight-bold">
               Languages:
             </span>
-            <span>
+            <span class="font-14">
               {{ countryDetails.languages[0].name }}
             </span>
           </p>
         </div>
       </main>
       <footer class="d-flex flex-column flex-md-row align-items-baseline">
-        <p class="white-space-nowrap">Border Countries:</p>
+        <p class="white-space-nowrap">
+          Border Countries:
+        </p>
         <div class="d-flex flex-wrap">
           <country-btn v-for="(country,index) in countryDetails.borders" :key="index" :country="country" />
         </div>
