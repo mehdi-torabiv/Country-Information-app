@@ -14,17 +14,8 @@
       </b-col>
     </b-row>
     <b-row class="mt-4 mx-auto">
-      <b-col cols="12" md="3">
-        <custom-card />
-      </b-col>
-      <b-col cols="12" md="3">
-        <custom-card />
-      </b-col>
-      <b-col cols="12" md="3">
-        <custom-card />
-      </b-col>
-      <b-col cols="12" md="3">
-        <custom-card />
+      <b-col v-for="(country,index) in countriesList" :key="index" cols="12" md="3">
+        <custom-card :country="country" />
       </b-col>
     </b-row>
   </b-container>
@@ -32,16 +23,30 @@
 
 <script>
 import CustomCard from '~/components/pages/home/CustomCard.vue'
+import Countries from '~/model/Countries.js'
 export default {
   components: {
     CustomCard
   },
   data () {
     return {
+      Countries,
       selectedContinent: '',
       regions: [
         'Africa', 'America', 'Oceania', 'Europe', 'Asia'
-      ]
+      ],
+      countriesList: []
+    }
+  },
+  created () {
+    this.getAllCountries()
+  },
+  methods: {
+    async getAllCountries () {
+      const data = await Countries.get()
+      console.log(data)
+      this.countriesList = data
+      console.log('data', this.countriesList)
     }
   }
 }
