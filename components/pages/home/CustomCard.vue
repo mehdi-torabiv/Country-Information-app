@@ -2,6 +2,7 @@
   <div
     :style="{backgroundColor : setBgColor , border : setBgColor}"
     class="overflow-hidden rounded shadow-lg my-3 my-md-auto cursor-pointer"
+    @click="$router.push(`/country/${country.name}`)"
   >
     <img :src="country.flag" height="200" width="250px" alt="country image">
     <div class="pl-4 py-4">
