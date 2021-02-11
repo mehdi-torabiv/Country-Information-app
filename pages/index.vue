@@ -4,18 +4,24 @@
       <b-col cols="12" md="5">
         <b-input
           v-model="name"
-          class="bg-dark border-dark shadow-lg mt-4"
+          class="border-dark shadow-lg mt-4"
+          :style="{backgroundColor : setBgColor , border : setBgColor}"
           placeholder="search for a country..."
           @keyup.enter="findCountryByName"
         />
       </b-col>
       <b-col cols="0" md="5" />
       <b-col cols="6" md="2">
-        <b-dropdown v-model="selectedRegion" text="Filter by Region" menu-class="bg-dark" variant="dark" class="shadow-lg mt-4">
+        <b-dropdown
+          v-model="selectedRegion"
+          text="Filter by Region"
+          menu-class="bg-dark"
+          :variant="setBgColor"
+          class="shadow-lg mt-4"
+        >
           <b-dropdown-item
             v-for="(region,index) in regions"
             :key="index"
-            class="text-white"
             @click="selectedRegion = region.value"
           >
             {{ region.name }}
@@ -53,6 +59,11 @@ export default {
       countriesList: []
     }
   },
+  computed: {
+    setBgColor () {
+      return this.$nuxt.$colorMode.preference === 'dark' ? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'
+    }
+  },
   watch: {
     selectedRegion () {
       this.findByRegion()
@@ -64,19 +75,15 @@ export default {
   methods: {
     async getAllCountries () {
       const data = await Countries.get('/all')
-      console.log(data)
       this.countriesList = data
-      console.log('data', this.countriesList)
     },
     async findCountryByName () {
       const { data } = await this.$axios.get(process.env.COUNTRY_URL + `/rest/v2/name/${this.name}`)
       this.countriesList = data
-      console.log('data', this.countriesList)
     },
     async findByRegion () {
       const { data } = await this.$axios.get(process.env.COUNTRY_URL + `/rest/v2/regionalbloc/${this.selectedRegion}`)
       this.countriesList = data
-      console.log('data', this.countriesList)
     }
   }
 }

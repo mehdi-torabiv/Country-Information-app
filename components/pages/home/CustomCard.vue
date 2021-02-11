@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-dark overflow-hidden text-white rounded shadow-md my-3 my-md-auto cursor-pointer">
+  <div
+    :style="{backgroundColor : setBgColor , border : setBgColor}"
+    class="overflow-hidden rounded shadow-lg my-3 my-md-auto cursor-pointer"
+  >
     <img :src="country.flag" height="200" width="250px" alt="country image">
     <div class="pl-4 py-4">
       <h4>
@@ -26,6 +29,14 @@ export default {
     country: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    setBgColor () {
+      return this.$nuxt.$colorMode.preference === 'dark' ? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'
+    },
+    setTextColor () {
+      return this.$nuxt.$colorMode.preference === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'
     }
   }
 
