@@ -1,6 +1,6 @@
 <template>
   <div class="bg-dark text-white shadow-lg">
-    <b-container fluid>
+    <b-container>
       <b-row class="d-flex align-items-baseline justify-content-between">
         <b-col cols="6">
           <h3 class="pt-2">
