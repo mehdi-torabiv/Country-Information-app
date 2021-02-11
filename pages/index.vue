@@ -6,12 +6,11 @@
       </b-col>
       <b-col cols="5" />
       <b-col cols="2">
-        <b-form-select
-          v-model="selectedContinent"
-          class="mt-4 bg-dark border-dark shadow-lg text-white"
-          placeholder="Filter by Region"
-          :options="['africa','america','asia','europe','oceania']"
-        />
+        <b-dropdown text="Filter by Region" menu-class="bg-dark" variant="dark" class="shadow-lg mt-4">
+          <b-dropdown-item v-for="(region,index) in regions" :key="index" class="text-white">
+            {{ region }}
+          </b-dropdown-item>
+        </b-dropdown>
       </b-col>
     </b-row>
     <b-row class="mt-4">
@@ -39,8 +38,19 @@ export default {
   },
   data () {
     return {
-      selectedContinent: ''
+      selectedContinent: '',
+      regions: [
+        'Africa', 'America', 'Oceania', 'Europe', 'Asia'
+      ]
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+::v-deep{
+  .dropdown-item{
+    color: white !important;
+  }
+}
+</style>
