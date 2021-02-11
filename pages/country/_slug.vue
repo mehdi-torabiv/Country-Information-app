@@ -5,7 +5,7 @@
         <back-button class="my-4" />
       </b-col>
     </b-row>
-    <country-detail />
+    <country-detail :country-details="countryDetails" />
   </b-container>
 </template>
 
@@ -16,6 +16,10 @@ export default {
   components: {
     BackButton,
     CountryDetail
+  },
+  async asyncData ({ $axios }) {
+    const { data } = await $axios.$get('https://api.nuxtjs.dev/mountains')
+    return { countryDetails: data }
   }
 }
 </script>
