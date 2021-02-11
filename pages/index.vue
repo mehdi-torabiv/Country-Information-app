@@ -2,7 +2,12 @@
   <b-container>
     <b-row cols="d-flex jutify-content-between align-items-center">
       <b-col cols="12" md="5">
-        <b-input class="bg-dark border-dark shadow-lg mt-4" placeholder="search for a country..." />
+        <b-input
+          v-model="name"
+          class="bg-dark border-dark shadow-lg mt-4"
+          placeholder="search for a country..."
+          @keyup.enter="findCountryByName"
+        />
       </b-col>
       <b-col cols="0" md="5" />
       <b-col cols="6" md="2">
@@ -31,6 +36,7 @@ export default {
   data () {
     return {
       Countries,
+      name: '',
       selectedContinent: '',
       regions: [
         'Africa', 'America', 'Oceania', 'Europe', 'Asia'
@@ -43,10 +49,14 @@ export default {
   },
   methods: {
     async getAllCountries () {
-      const data = await Countries.get()
+      const data = await Countries.get('/all')
       console.log(data)
       this.countriesList = data
       console.log('data', this.countriesList)
+    },
+    async findCountryByName () {
+      const data = await this.$axios.get(process.env.COUNTRY_URL + `/rest/v2/name/${this.name}`)
+      this.countriesList = data
     }
   }
 }
