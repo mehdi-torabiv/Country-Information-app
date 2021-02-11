@@ -1,15 +1,15 @@
 <template>
   <b-row>
-    <b-col cols="6">
-      <img :src="countryDetails.flag" width="500" alt="country image">
+    <b-col cols="12" md="6">
+      <img :src="countryDetails.flag" class="w-100 w-md-50" alt="country image">
     </b-col>
-    <b-col cols="6">
+    <b-col cols="12" md="6">
       <header>
         <h3>
           {{ countryDetails.name }}
         </h3>
       </header>
-      <main class="d-flex justify-content-between">
+      <main class="d-flex flex-column flex-md-row justify-content-between">
         <div>
           <p>
             <span>
@@ -79,10 +79,10 @@
           </p>
         </div>
       </main>
-      <footer class="d-flex align-items-baseline">
-        <p>Border Countries:</p>
-        <div v-for="(country,index) in countryDetails.borders" :key="index">
-          <country-btn :country="country" />
+      <footer class="d-flex flex-column flex-md-row align-items-baseline">
+        <p class="white-space-nowrap">Border Countries:</p>
+        <div class="d-flex flex-wrap">
+          <country-btn v-for="(country,index) in countryDetails.borders" :key="index" :country="country" />
         </div>
       </footer>
     </b-col>

@@ -23,13 +23,11 @@ export default {
     }
   },
   created () {
-    console.log(this.$route.params)
     this.getDetails()
   },
   methods: {
     async getDetails () {
       const { data } = await this.$axios.get(`https://restcountries.eu/rest/v2/name/${this.$route.params.name}`)
-      console.log(data)
       this.countryDetails = data
     }
   }

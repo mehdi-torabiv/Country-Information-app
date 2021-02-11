@@ -1,7 +1,7 @@
 <template>
   <div
     :style="{backgroundColor : setBgColor , border : setBgColor}"
-    class="shadow-lg rounded  text-center px-2 mx-2 py-1 cursor-pointer"
+    class="shadow-lg rounded  text-center px-2 mx-2 mb-2 py-md-1 cursor-pointer"
     @click="$router.back()"
   >
     {{ country }}
