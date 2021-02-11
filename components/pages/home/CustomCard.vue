@@ -4,12 +4,12 @@
     class="overflow-hidden rounded shadow-lg my-3 my-md-auto cursor-pointer"
     @click="$router.push(`/country/${country.name}`)"
   >
-    <img :src="country.flag" height="200" width="250px" alt="country image">
+    <img :src="country.flag" class="flag" height="200" width="250" alt="country image">
     <div class="pl-4 py-4">
-      <h4>
+      <h4 class="font-18 font-weight-bold">
         {{ country.name }}
       </h4>
-      <p>
+      <p class="font-14">
         <span class="d-block py-1">
           population : {{ country.population }}
         </span>
@@ -45,5 +45,4 @@ export default {
 </script>
 
 <style>
-
 </style>

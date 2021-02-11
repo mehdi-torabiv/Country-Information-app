@@ -1,7 +1,7 @@
 <template>
   <div
     :style="{backgroundColor : setBgColor , border : setBgColor}"
-    class="shadow-lg rounded  text-center px-5 py-1 cursor-pointer"
+    class="back-btn shadow-lg rounded  text-center px-5 py-1 cursor-pointer"
     @click="$router.back()"
   >
     Back
@@ -22,5 +22,7 @@ export default {
 </script>
 
 <style>
-
+.back-btn{
+  margin: 4rem 0 !important;
+}
 </style>
