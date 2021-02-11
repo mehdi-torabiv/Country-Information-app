@@ -1,13 +1,13 @@
 <template>
-  <div class="nav shadow-lg">
+  <div class="nav shadow-lg font-14">
     <b-container>
-      <b-row class="d-flex align-items-baseline justify-content-between">
+      <b-row class="d-flex align-items-baseline py-2 justify-content-between">
         <b-col cols="6">
-          <h3 class="pt-2">
+          <h3 class="pt-2 font-18 font-weight-bold">
             where is the world?
           </h3>
         </b-col>
-        <b-col cols="6" class="text-right">
+        <b-col cols="6" class="text-right font-weight-bold">
           <p @click="toggleMode">
             {{ isDark ? "Dark Mode" : "Light Mode" }}
           </p>
