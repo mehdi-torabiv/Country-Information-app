@@ -1,5 +1,5 @@
 <template>
-  <b-container class="text-white">
+  <b-container>
     <b-row>
       <b-col cols="1">
         <back-button class="my-4" />
