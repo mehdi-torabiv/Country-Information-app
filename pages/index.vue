@@ -16,13 +16,12 @@
           v-model="selectedRegion"
           text="Filter by Region"
           menu-class="bg-dark"
-          variant="dark"
+          :variant="setBgColor"
           class="shadow-lg mt-4"
         >
           <b-dropdown-item
             v-for="(region,index) in regions"
             :key="index"
-            class="text-white"
             @click="selectedRegion = region.value"
           >
             {{ region.name }}
