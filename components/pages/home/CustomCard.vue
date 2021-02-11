@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark text-white rounded shadow-md">
+  <div class="bg-dark text-white rounded shadow-md my-3 my-md-auto">
     <img src="" height="200" alt="country image">
     <div class="pl-4 py-4">
       <h4>
