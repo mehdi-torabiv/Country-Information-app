@@ -1,9 +1,9 @@
 <template>
   <div class="bg-dark text-white shadow-lg">
     <b-container fluid>
-      <b-row class="py-2 d-flex align-items-baseline">
-        <b-col cols="6" class="text-left">
-          <h3>
+      <b-row class="d-flex align-items-baseline justify-content-between">
+        <b-col cols="6">
+          <h3 class="pt-2">
             where is the world?
           </h3>
         </b-col>
