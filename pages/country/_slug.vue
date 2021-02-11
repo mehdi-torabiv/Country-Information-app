@@ -1,7 +1,7 @@
 <template>
-  <div class="text-white">
+  <b-container class="text-white">
     country name
-  </div>
+  </b-container>
 </template>
 
 <script>
