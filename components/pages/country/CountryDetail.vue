@@ -1,11 +1,11 @@
 <template>
-  <b-row>
+  <b-row class="d-flex justify-content-between">
     <b-col cols="12" md="6">
       <img :src="countryDetails.flag" class="w-100 w-md-50" alt="country image">
     </b-col>
-    <b-col cols="12" md="6" class="pt-4">
-      <header>
-        <h3>
+    <b-col cols="12" md="5" class="pt-4">
+      <header class="py-4">
+        <h3 class="font-weight-bold">
           {{ countryDetails.name }}
         </h3>
       </header>
@@ -79,7 +79,7 @@
           </p>
         </div>
       </main>
-      <footer class="d-flex flex-column flex-md-row align-items-baseline">
+      <footer class="d-flex flex-column flex-md-row align-items-baseline pt-5">
         <p class="white-space-nowrap">
           Border Countries:
         </p>
@@ -105,3 +105,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+p{
+  padding: 0 !important;
+  margin: 5px 0 !important;
+}
+</style>
