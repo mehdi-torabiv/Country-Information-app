@@ -13,8 +13,8 @@
         </b-dropdown>
       </b-col>
     </b-row>
-    <b-row class="mt-4 mx-auto">
-      <b-col v-for="(country,index) in countriesList" :key="index" cols="12" md="3">
+    <b-row class="mx-auto">
+      <b-col v-for="(country,index) in countriesList" :key="index" cols="12" md="3" class="mt-4">
         <custom-card :country="country" />
       </b-col>
     </b-row>
