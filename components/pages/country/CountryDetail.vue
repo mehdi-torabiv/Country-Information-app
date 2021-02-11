@@ -3,7 +3,7 @@
     <b-col cols="12" md="6">
       <img :src="countryDetails.flag" class="w-100 w-md-50" alt="country image">
     </b-col>
-    <b-col cols="12" md="6">
+    <b-col cols="12" md="6" class="pt-4">
       <header>
         <h3>
           {{ countryDetails.name }}
@@ -103,7 +103,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
