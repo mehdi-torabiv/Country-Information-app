@@ -1,6 +1,22 @@
 <template>
-  <div>
-    test
+  <div class="bg-dark text-white rounded shadow-md">
+    <img src="" height="200" alt="country image">
+    <div class="pl-4 py-4">
+      <h4>
+        country name
+      </h4>
+      <p>
+        <span class="d-block py-1">
+          population
+        </span>
+        <span class="d-block py-1">
+          population
+        </span>
+        <span class="d-block py-1">
+          population
+        </span>
+      </p>
+    </div>
   </div>
 </template>
 
