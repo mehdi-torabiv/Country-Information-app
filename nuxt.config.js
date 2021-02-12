@@ -50,6 +50,11 @@ export default {
       '~/assets/scss/*.scss'
     ]
   },
+  publicRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL
+    }
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
