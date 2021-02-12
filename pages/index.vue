@@ -32,7 +32,8 @@
         <b-dropdown
           v-model="selectedRegion"
           text="Filter by Region"
-          menu-class="bg-dark"
+          :toggle-class="$nuxt.$colorMode.preference === 'dark'?'light-style':'dark-style'"
+          :menu-class="$nuxt.$colorMode.preference === 'dark'?'light-style':'dark-style'"
           :variant="setBgColor"
           class="shadow-lg mt-4"
         >
@@ -140,8 +141,18 @@ export default {
 
 <style lang="scss" scoped>
 ::v-deep {
-  .dropdown-item {
-    color: white !important;
+  .dropdown-item{
+    &:hover{
+      background: inherit;
+    }
+  }
+  .light-style{
+    color: hsl(0, 0%, 100%) !important;
+    background: hsl(209, 23%, 22%);
+  }
+  .dark-style{
+    color: hsl(200, 15%, 8%) !important;
+    background: hsl(0, 0%, 100%);
   }
 }
 </style>
