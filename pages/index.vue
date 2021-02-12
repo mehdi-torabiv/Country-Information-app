@@ -72,10 +72,11 @@ export default {
       selectedRegion: '',
       selectedContinent: '',
       regions: [
-        { name: 'Africa', value: 'AU' },
-        { name: 'America', value: 'CAIS' },
-        { name: 'Europe', value: 'EU' },
-        { name: 'Asia', value: 'ASEAN' }
+        { name: 'Africa', value: 'Africa' },
+        { name: 'America', value: 'Americas' },
+        { name: 'Europe', value: 'Europe' },
+        { name: 'Asia', value: 'Asia' },
+        { name: 'Oceania', value: 'Oceania' }
       ],
       countriesList: []
     }
@@ -111,7 +112,7 @@ export default {
     },
     async findByRegion () {
       const { data } = await this.$axios.get(
-        `https://restcountries.eu/rest/v2/regionalbloc/${this.selectedRegion}`
+        `https://restcountries.eu/rest/v2/region/${this.selectedRegion}`
       )
       this.countriesList = data
     },
