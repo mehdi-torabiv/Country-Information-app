@@ -10,7 +10,11 @@
           @keyup.enter="findCountryByName"
         />
       </b-col>
-      <b-col cols="0" md="5" />
+      <b-col cols="0" md="5">
+        <div @click="insertionSort(countriesList)">
+            testme
+        </div>
+      </b-col>
       <b-col cols="6" md="2" class="text-right">
         <b-dropdown
           v-model="selectedRegion"
@@ -94,7 +98,25 @@ export default {
         process.env.COUNTRY_URL + `/rest/v2/regionalbloc/${this.selectedRegion}`
       )
       this.countriesList = data
+    },
+    insertionSort (list) {
+      const len = list.length
+      for (let i = 1; i < len; i++) {
+        if (list[i].population < list[0].population) {
+          list.unshift(list.splice(i, 1)[0])
+        } else if (list[i].population > list[i - 1].population) {
+          continue
+        } else {
+          for (let j = 1; j < i; j++) {
+            if (list[i].population >= list[j - 1].population && list[i].population <= list[j].population) {
+              list.splice(j, 0, list.splice(i, 1)[0])
+            }
+          }
+        }
+      }
+      this.countriesList = list
     }
+
   }
 }
 </script>
