@@ -84,7 +84,11 @@
           Border Countries:
         </p>
         <div class="d-flex flex-wrap">
-          <country-btn v-for="(country,index) in countryDetails.borders" :key="index" :country="country" />
+          <country-btn
+            v-for="(country,index) in countryDetails.borders"
+            :key="index"
+            :country="country"
+          />
         </div>
       </footer>
     </b-col>
