@@ -32,7 +32,8 @@
         <b-dropdown
           v-model="selectedRegion"
           text="Filter by Region"
-          menu-class="bg-dark"
+          :toggle-class="$nuxt.$colorMode.preference === 'dark'?'light-style':'dark-style'"
+          :menu-class="$nuxt.$colorMode.preference === 'dark'?'light-style':'dark-style'"
           :variant="setBgColor"
           class="shadow-lg mt-4"
         >
@@ -41,7 +42,9 @@
             :key="index"
             @click="selectedRegion = region.value"
           >
-            {{ region.name }}
+            <span :class="$nuxt.$colorMode.preference === 'dark'?'light-style':'dark-style'">
+              {{ region.name }}
+            </span>
           </b-dropdown-item>
         </b-dropdown>
       </b-col>
@@ -72,10 +75,11 @@ export default {
       selectedRegion: '',
       selectedContinent: '',
       regions: [
-        { name: 'Africa', value: 'AU' },
-        { name: 'America', value: 'CAIS' },
-        { name: 'Europe', value: 'EU' },
-        { name: 'Asia', value: 'ASEAN' }
+        { name: 'Africa', value: 'Africa' },
+        { name: 'America', value: 'Americas' },
+        { name: 'Europe', value: 'Europe' },
+        { name: 'Asia', value: 'Asia' },
+        { name: 'Oceania', value: 'Oceania' }
       ],
       countriesList: []
     }
@@ -111,7 +115,7 @@ export default {
     },
     async findByRegion () {
       const { data } = await this.$axios.get(
-        `https://restcountries.eu/rest/v2/regionalbloc/${this.selectedRegion}`
+        `https://restcountries.eu/rest/v2/region/${this.selectedRegion}`
       )
       this.countriesList = data
     },
@@ -139,8 +143,18 @@ export default {
 
 <style lang="scss" scoped>
 ::v-deep {
-  .dropdown-item {
-    color: white !important;
+  .dropdown-item{
+    &:hover{
+      background: inherit;
+    }
+  }
+  .light-style{
+    color: hsl(0, 0%, 100%) !important;
+    background: hsl(209, 23%, 22%);
+  }
+  .dark-style{
+    color: hsl(200, 15%, 8%) !important;
+    background: hsl(0, 0%, 100%);
   }
 }
 </style>

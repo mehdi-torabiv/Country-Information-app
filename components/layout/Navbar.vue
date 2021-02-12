@@ -3,8 +3,8 @@
     <b-container>
       <b-row class="d-flex align-items-baseline py-2 justify-content-between">
         <b-col cols="6">
-          <h3 class="pt-2 font-18 font-weight-bold">
-            where is the world?
+          <h3 class="pt-3 font-18 font-weight-bold">
+            Where is the World?
           </h3>
         </b-col>
         <b-col cols="6" class="d-flex justify-content-end align-items-baseline font-weight-bold">
