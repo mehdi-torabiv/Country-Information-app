@@ -16,7 +16,7 @@
       </h4>
       <p class="font-14">
         <span class="d-block py-1">
-          population : {{ formatPrice(country.population) }}
+          population : {{ formatPopulation(country.population) }}
         </span>
         <span class="d-block py-1"> Region : {{ country.region }} </span>
         <span class="d-block py-1"> Capital : {{ country.capital }} </span>
@@ -26,7 +26,9 @@
 </template>
 
 <script>
+import global from '~/mixins/global.js'
 export default {
+  mixins: [global],
   props: {
     country: {
       type: Object,
@@ -43,11 +45,6 @@ export default {
       return this.$nuxt.$colorMode.preference === 'dark'
         ? 'hsl(0, 0%, 100%)'
         : 'hsl(200, 15%, 8%)'
-    }
-  },
-  methods: {
-    formatPrice (value) {
-      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
     }
   }
 }

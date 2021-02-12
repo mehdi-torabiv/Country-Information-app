@@ -24,7 +24,7 @@
               Population:
             </span>
             <span class="font-14">
-              {{ countryDetails.population }}
+              {{ formatPopulation(countryDetails.population) }}
             </span>
           </p>
           <p>
@@ -93,10 +93,12 @@
 
 <script>
 import CountryBtn from '~/components/pages/country/CountryBtn.vue'
+import global from '~/mixins/global.js'
 export default {
   components: {
     CountryBtn
   },
+  mixins: [global],
   props: {
     countryDetails: {
       type: Object,
