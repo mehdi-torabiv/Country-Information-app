@@ -4,7 +4,7 @@
     class="back-btn shadow-lg rounded d-flex justify-content-center  text-center px-5 py-1 cursor-pointer"
     @click="$router.back()"
   >
-    <MdArrowBackIcon class="pr-2" :style="{fill : setTextColor}"/>
+    <MdArrowBackIcon class="pr-2" :style="{fill : setTextColor}" />
     Back
   </div>
 </template>
