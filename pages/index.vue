@@ -107,13 +107,13 @@ export default {
     },
     async findCountryByName () {
       const { data } = await this.$axios.get(
-        
+        process.env + `rest/v2/name/${this.name}`
       )
       this.countriesList = data
     },
     async findByRegion () {
       const { data } = await this.$axios.get(
-
+        process.env + `rest/v2/regionalbloc/${this.selectedRegion}`
       )
       this.countriesList = data
     },
