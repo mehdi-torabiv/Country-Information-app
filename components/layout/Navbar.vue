@@ -7,7 +7,8 @@
             where is the world?
           </h3>
         </b-col>
-        <b-col cols="6" class="text-right font-weight-bold">
+        <b-col cols="6" class="d-flex justify-content-end align-items-baseline font-weight-bold">
+          <MdMoonIcon class="pr-1" w="16px" h="16px" :style="{fill :setTextColor }" />
           <p @click="toggleMode">
             {{ isDark ? "Dark Mode" : "Light Mode" }}
           </p>
@@ -18,11 +19,20 @@
 </template>
 
 <script>
+import MdMoonIcon from 'vue-ionicons/dist/md-moon.vue'
 export default {
+  components: {
+    MdMoonIcon
+  },
   data () {
     return {
       colors: ['system', 'light', 'dark', 'sepia'],
       isDark: true
+    }
+  },
+  computed: {
+    setTextColor () {
+      return this.$nuxt.$colorMode.preference === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'
     }
   },
   methods: {
