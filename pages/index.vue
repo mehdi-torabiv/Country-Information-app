@@ -2,13 +2,29 @@
   <b-container>
     <b-row cols="d-flex jutify-content-between align-items-center">
       <b-col cols="12" md="5">
-        <b-input
+        <b-input-group
+          class="border-dark shadow-lg mt-4"
+          :style="{ backgroundColor: setBgColor, border: setBgColor }"
+        >
+          <template #prepend>
+            <b-input-group-text :style="{ backgroundColor: setBgColor,fill:setTextColor, border: setBgColor }">
+              <MdSearchIcon />
+            </b-input-group-text>
+          </template>
+          <b-form-input
+            v-model="name"
+            placeholder="search for a country..."
+            :style="{ backgroundColor: setBgColor,fill:setTextColor, border: setBgColor }"
+            @keyup.enter="findCountryByName"
+          />
+        </b-input-group>
+        <!-- <b-input
           v-model="name"
           class="border-dark shadow-lg mt-4"
           :style="{ backgroundColor: setBgColor, border: setBgColor }"
           placeholder="search for a country..."
           @keyup.enter="findCountryByName"
-        />
+        /> -->
       </b-col>
       <b-col cols="0" md="5">
         <b-button
@@ -50,11 +66,13 @@
 </template>
 
 <script>
+import MdSearchIcon from 'vue-ionicons/dist/md-search.vue'
 import CustomCard from '~/components/pages/home/CustomCard.vue'
 import Countries from '~/model/Countries.js'
 export default {
   components: {
-    CustomCard
+    CustomCard,
+    MdSearchIcon
   },
   data () {
     return {
