@@ -113,7 +113,7 @@ export default {
     },
     async findByRegion () {
       const { data } = await this.$axios.get(
-        `https://restcountries.eu/rest/v2/regionalbloc/${this.selectedRegion}`
+dsad
       )
       this.countriesList = data
     },
