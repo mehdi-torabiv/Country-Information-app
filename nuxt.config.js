@@ -45,6 +45,9 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv'
   ],
+  env: {
+    COUNTRY_URL: process.env.COUNTRY_URL
+  },
   styleResources: {
     scss: [
       '~/assets/scss/*.scss'
