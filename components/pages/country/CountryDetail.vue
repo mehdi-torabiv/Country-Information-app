@@ -24,7 +24,7 @@
               Population:
             </span>
             <span class="font-14">
-              {{ countryDetails.population }}
+              {{ formatPopulation(countryDetails.population) }}
             </span>
           </p>
           <p>
@@ -84,7 +84,11 @@
           Border Countries:
         </p>
         <div class="d-flex flex-wrap">
-          <country-btn v-for="(country,index) in countryDetails.borders" :key="index" :country="country" />
+          <country-btn
+            v-for="(country,index) in countryDetails.borders"
+            :key="index"
+            :country="country"
+          />
         </div>
       </footer>
     </b-col>
@@ -93,10 +97,12 @@
 
 <script>
 import CountryBtn from '~/components/pages/country/CountryBtn.vue'
+import global from '~/mixins/global.js'
 export default {
   components: {
     CountryBtn
   },
+  mixins: [global],
   props: {
     countryDetails: {
       type: Object,
