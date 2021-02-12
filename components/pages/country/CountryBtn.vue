@@ -17,12 +17,12 @@ export default {
         }
     },
     computed: {
-    setBgColor () {
-      return this.$nuxt.$colorMode.preference === 'dark' ? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'
-    },
-    setTextColor () {
-      return this.$nuxt.$colorMode.preference === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'
-    }
+      setBgColor () {
+        return this.$nuxt.$colorMode.preference === 'dark' ? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'
+      },
+      setTextColor () {
+        return this.$nuxt.$colorMode.preference === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'
+      }
   }
 }
 </script>

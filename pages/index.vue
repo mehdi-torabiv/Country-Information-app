@@ -11,9 +11,13 @@
         />
       </b-col>
       <b-col cols="0" md="5">
-        <div @click="insertionSort(countriesList)">
-            testme
-        </div>
+        <b-button
+          class="border-dark shadow-lg mt-4"
+          :style="{ backgroundColor: setBgColor, border: setBgColor, color :setTextColor}"
+          @click="insertionSort(countriesList)"
+        >
+          population Sort
+        </b-button>
       </b-col>
       <b-col cols="6" md="2" class="text-right">
         <b-dropdown
@@ -68,6 +72,9 @@ export default {
     }
   },
   computed: {
+    setTextColor () {
+      return this.$nuxt.$colorMode.preference === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'
+    },
     setBgColor () {
       return this.$nuxt.$colorMode.preference === 'dark'
         ? 'hsl(209, 23%, 22%)'
