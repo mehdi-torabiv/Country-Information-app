@@ -5,13 +5,13 @@
         <b-input
           v-model="name"
           class="border-dark shadow-lg mt-4"
-          :style="{backgroundColor : setBgColor , border : setBgColor}"
+          :style="{ backgroundColor: setBgColor, border: setBgColor }"
           placeholder="search for a country..."
           @keyup.enter="findCountryByName"
         />
       </b-col>
       <b-col cols="0" md="5" />
-      <b-col cols="6" md="2">
+      <b-col cols="6" md="2" class="text-right">
         <b-dropdown
           v-model="selectedRegion"
           text="Filter by Region"
@@ -20,7 +20,7 @@
           class="shadow-lg mt-4"
         >
           <b-dropdown-item
-            v-for="(region,index) in regions"
+            v-for="(region, index) in regions"
             :key="index"
             @click="selectedRegion = region.value"
           >
@@ -28,9 +28,13 @@
           </b-dropdown-item>
         </b-dropdown>
       </b-col>
-    </b-row>
-    <b-row class="mx-auto">
-      <b-col v-for="(country,index) in countriesList" :key="index" cols="12" md="3" class="mt-4">
+      <b-col
+        v-for="(country, index) in countriesList"
+        :key="index"
+        cols="12"
+        md="3"
+        class="mt-4"
+      >
         <custom-card :country="country" />
       </b-col>
     </b-row>
@@ -61,7 +65,9 @@ export default {
   },
   computed: {
     setBgColor () {
-      return this.$nuxt.$colorMode.preference === 'dark' ? 'hsl(209, 23%, 22%)' : 'hsl(0, 0%, 100%)'
+      return this.$nuxt.$colorMode.preference === 'dark'
+        ? 'hsl(209, 23%, 22%)'
+        : 'hsl(0, 0%, 100%)'
     }
   },
   watch: {
@@ -78,11 +84,15 @@ export default {
       this.countriesList = data
     },
     async findCountryByName () {
-      const { data } = await this.$axios.get(process.env.COUNTRY_URL + `/rest/v2/name/${this.name}`)
+      const { data } = await this.$axios.get(
+        process.env.COUNTRY_URL + `/rest/v2/name/${this.name}`
+      )
       this.countriesList = data
     },
     async findByRegion () {
-      const { data } = await this.$axios.get(process.env.COUNTRY_URL + `/rest/v2/regionalbloc/${this.selectedRegion}`)
+      const { data } = await this.$axios.get(
+        process.env.COUNTRY_URL + `/rest/v2/regionalbloc/${this.selectedRegion}`
+      )
       this.countriesList = data
     }
   }
@@ -90,8 +100,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep{
-  .dropdown-item{
+::v-deep {
+  .dropdown-item {
     color: white !important;
   }
 }
