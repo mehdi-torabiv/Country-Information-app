@@ -42,7 +42,9 @@
             :key="index"
             @click="selectedRegion = region.value"
           >
-            {{ region.name }}
+            <span :class="$nuxt.$colorMode.preference === 'dark'?'light-style':'dark-style'">
+              {{ region.name }}
+            </span>
           </b-dropdown-item>
         </b-dropdown>
       </b-col>
