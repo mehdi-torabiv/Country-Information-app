@@ -18,13 +18,6 @@
             @keyup.enter="findCountryByName"
           />
         </b-input-group>
-        <!-- <b-input
-          v-model="name"
-          class="border-dark shadow-lg mt-4"
-          :style="{ backgroundColor: setBgColor, border: setBgColor }"
-          placeholder="search for a country..."
-          @keyup.enter="findCountryByName"
-        /> -->
       </b-col>
       <b-col cols="0" md="5">
         <b-button
@@ -35,7 +28,7 @@
           population Sort
         </b-button>
       </b-col>
-      <b-col cols="6" md="2" class="text-right">
+      <b-col cols="6" md="2" class="text-md-right">
         <b-dropdown
           v-model="selectedRegion"
           text="Filter by Region"
