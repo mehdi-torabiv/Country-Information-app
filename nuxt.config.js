@@ -45,9 +45,6 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv'
   ],
-  publicRuntimeConfig: {
-    baseURL: process.env.NODE_ENV === 'production' ? process.env.COUNTRY_URL : 'https://localhost:3000'
-  },
   styleResources: {
     scss: [
       '~/assets/scss/*.scss'
