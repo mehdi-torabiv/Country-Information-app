@@ -1,20 +1,5 @@
-# alibaba
+Hi,
+This is a test project.
 
-## Build Setup
-
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+I deploy this project on heroku and you can see in like bellow.
+https://country-nuxt-app.herokuapp.com/
