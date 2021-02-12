@@ -2,12 +2,12 @@
   <div class="nav shadow-lg font-14">
     <b-container>
       <b-row class="d-flex align-items-baseline py-2 justify-content-between">
-        <b-col cols="6">
+        <b-col cols="7">
           <h3 class="pt-3 font-18 font-weight-bold">
             Where is the World?
           </h3>
         </b-col>
-        <b-col cols="6" class="d-flex justify-content-end align-items-baseline font-weight-bold">
+        <b-col cols="4" class="d-flex justify-content-end align-items-baseline font-weight-bold">
           <MdMoonIcon class="pr-1" w="16px" h="16px" :style="{fill :setTextColor }" />
           <p @click="toggleMode">
             {{ isDark ? "Dark Mode" : "Light Mode" }}
