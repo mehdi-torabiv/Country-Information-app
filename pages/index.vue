@@ -61,7 +61,6 @@
 <script>
 import MdSearchIcon from 'vue-ionicons/dist/md-search.vue'
 import CustomCard from '~/components/pages/home/CustomCard.vue'
-import Countries from '~/model/Countries.js'
 export default {
   components: {
     CustomCard,
@@ -69,7 +68,6 @@ export default {
   },
   data () {
     return {
-      Countries,
       name: '',
       selectedRegion: '',
       selectedContinent: '',
@@ -102,18 +100,18 @@ export default {
   },
   methods: {
     async getAllCountries () {
-      const data = await Countries.get('/all')
+      const { data } = await this.$axios.get('https://restcountries.eu/rest/v2/all')
       this.countriesList = data
     },
     async findCountryByName () {
       const { data } = await this.$axios.get(
-        process.env + `rest/v2/name/${this.name}`
+        `https://restcountries.eu/rest/v2/name/${this.name}`
       )
       this.countriesList = data
     },
     async findByRegion () {
       const { data } = await this.$axios.get(
-        process.env + `rest/v2/regionalbloc/${this.selectedRegion}`
+        `https://restcountries.eu/rest/v2/regionalbloc/${this.selectedRegion}`
       )
       this.countriesList = data
     },
