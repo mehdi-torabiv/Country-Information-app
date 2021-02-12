@@ -100,7 +100,7 @@ export default {
   },
   methods: {
     async getAllCountries () {
-      const data = await this.$axios.get('https://restcountries.eu/rest/v2/all')
+      const { data } = await this.$axios.get('https://restcountries.eu/rest/v2/all')
       this.countriesList = data
     },
     async findCountryByName () {
