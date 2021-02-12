@@ -33,7 +33,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -52,7 +53,17 @@ export default {
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-
+  googleAnalytics: {
+    id: 'G-W4E06EYPZJ'
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: 'G-W4E06EYPZJ',
+      autoTracking: {
+        screenview: true
+      }
+    }
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
